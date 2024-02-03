@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-CARD</title>
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .box{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            transition: 0.5s;
+            margin-left: 20px;
+        }
+
+        .box:hover{
+            height: 400px;
+        }
+
+        .box .img-box{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        .box .img-box img{
+            max-width: 100%;
+            opacity: 0.1;
+            transition: 0.5s;
+        }
+
+        .box:hover .img-box img{
+            opacity: 1;
+        }
+
+        .box::before{
+            content: '';
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            top:-2px;
+            bottom: -2px;
+            right: -2px;
+            left: -2px;
+            z-index: -1;
+        }
+
+        .box::after{
+            content: '';
+            position: absolute;
+            background-color: white;
+            top: -2px;
+            bottom: -2px;
+            right: -2px;
+            left: -2px;
+            z-index: -2;
+            filter: blur(40px);
+        }
+
+        /* .box::before, .box::after{
+            background: linear-gradient(235deg, #85ff00, #010615, #00bcd4 );
+        } */
+
+        .box::before, .box::after{
+            background: linear-gradient(235deg, #b5b8c0, #d53b3b, #100cf5 );
+        }
+
+        .box .content{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+            left: 10px;
+            right: 10px;
+            bottom: 8px;
+            height: 90px;
+            color: white;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .box:hover .content{
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="img-box">
+            <img src="https://scontent.fcmb8-1.fna.fbcdn.net/v/t39.30808-6/409185731_3343684055923464_6962000559907983275_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeHpGbv50S5sGm4oON-IQdrpGvkel5ejPBQa-R6Xl6M8FIqpxUWeiIX38rs44p28Pu2t10LYB-gEqm0fQa6rhVoI&_nc_ohc=diB9pbst1QsAX-Zxywe&_nc_ht=scontent.fcmb8-1.fna&oh=00_AfC1CSnk7Na-INMhQ1iKkQN_UGz2bI96yhPM2SVyneqRRA&oe=65C30391" alt="">
+        </div>
+        <div class="content">
+            <h2>Chamith Sadeepa</h2>
+            <p>I'm Student</p>
+        </div>
+    </div>
+
+   
+
+</body>
+</html>
